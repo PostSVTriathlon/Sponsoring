@@ -220,6 +220,7 @@ body.color-preview .section-kicker-light span:first-child { color: #e3017e; }
 body.color-preview .intro,
 body.color-preview .teams,
 body.color-preview .impact-section,
+body.color-preview .league-section,
 body.color-preview .apparel-scroll,
 body.color-preview .contact,
 body.color-preview .site-footer {
@@ -229,11 +230,13 @@ body.color-preview .site-footer {
 body.color-preview .intro,
 body.color-preview .teams,
 body.color-preview .impact-section,
+body.color-preview .league-section,
 body.color-preview .contact { color: #1a2a4b; }
 
 body.color-preview .intro,
 body.color-preview .teams,
 body.color-preview .impact-section,
+body.color-preview .league-section,
 body.color-preview .contact { padding-block: clamp(2rem, 5vh, 4rem); }
 
 body.color-preview .chapter {
@@ -297,8 +300,9 @@ body.color-preview .chapter-indicator {
   width: 38px;
   height: 38px;
   justify-self: end;
-  border: 1px solid rgba(26, 42, 75, .6);
+  border: 1px solid rgba(255, 255, 255, .9);
   border-radius: 50%;
+  background: transparent;
 }
 
 body.color-preview .chapter-indicator::before,
@@ -308,7 +312,7 @@ body.color-preview .chapter-indicator::after {
   left: 50%;
   width: 14px;
   height: 1px;
-  background: #1a2a4b;
+  background: #ffffff;
   content: "";
   transform: translate(-50%, -50%);
 }
@@ -349,7 +353,12 @@ body.color-preview .team-caption {
   paint-order: stroke fill;
 }
 
-body.color-preview .chapter-content h2,
+body.color-preview .chapter-content h2 {
+  color: #1a2a4b;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
 body.color-preview .chapter-content h3 {
   color: #ffffff;
   -webkit-text-stroke: .75px #1a2a4b;
@@ -358,8 +367,8 @@ body.color-preview .chapter-content h3 {
 }
 
 body.color-preview .chapter-content .intro h2 span {
-  color: #ffffff;
-  -webkit-text-stroke: .75px #1a2a4b;
+  color: #1a2a4b;
+  -webkit-text-stroke: 0;
   paint-order: stroke fill;
 }
 
@@ -374,6 +383,49 @@ body.color-preview .teams-heading,
 body.color-preview .impact-heading,
 body.color-preview .contact-main {
   margin-top: .9rem;
+}
+
+body.color-preview .league-heading,
+body.color-preview .league-team-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, .7fr);
+  gap: clamp(2rem, 8vw, 8rem);
+}
+
+body.color-preview .league-heading {
+  align-items: end;
+  margin-top: 1.25rem;
+}
+
+body.color-preview .league-team-heading {
+  align-items: start;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(26, 42, 75, .5);
+}
+
+body.color-preview .league-heading > div,
+body.color-preview .league-team-copy {
+  max-width: 38rem;
+}
+
+body.color-preview .league-heading h2,
+body.color-preview .league-team-heading h2 {
+  font-size: clamp(2.6rem, 4.4vw, 4.4rem);
+}
+
+body.color-preview .league-heading > div p,
+body.color-preview .league-team-copy p {
+  font-size: 1.05rem;
+}
+
+body.color-preview .league-heading > div p:last-child,
+body.color-preview .league-team-copy p:last-child { margin-bottom: 0; }
+
+body.color-preview .league-team-copy p + p {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(26, 42, 75, .28);
 }
 
 body.color-preview .impact-heading {
@@ -425,10 +477,10 @@ body.color-preview .partner-offer-grid {
 body.color-preview .partner-offer-copy h2 {
   max-width: 12ch;
   margin: .75rem 0 1rem;
-  color: #ffffff;
+  color: #1a2a4b;
   font-size: clamp(2.4rem, 4vw, 4.5rem);
   line-height: .96;
-  -webkit-text-stroke: .45px #1a2a4b;
+  -webkit-text-stroke: 0;
   paint-order: stroke fill;
 }
 
@@ -734,6 +786,10 @@ body.color-preview .hero h1 em {
 }
 
 @media (max-width: 600px) {
+  body.color-preview #kapitel-04[open] + #kapitel-05 {
+    margin-top: 0;
+  }
+
   body.color-preview .hero-copy {
     padding-top: 4rem;
   }
@@ -747,15 +803,25 @@ body.color-preview .hero h1 em {
     font-size: clamp(1.9rem, 7.5vw, 3.8rem);
   }
 
+  body.color-preview .partner-offer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 1.5rem;
+  }
+
   body.color-preview .intro h2,
   body.color-preview .teams-heading h2,
   body.color-preview .impact-heading h2,
+  body.color-preview .league-heading h2,
+  body.color-preview .league-team-heading h2,
   body.color-preview .contact-main h2 {
     font-size: clamp(2.6rem, 8vw, 3.8rem);
     overflow-wrap: anywhere;
   }
 
-  body.color-preview .impact-heading { grid-template-columns: 1fr; gap: 1.5rem; }
+  body.color-preview .impact-heading,
+  body.color-preview .league-heading,
+  body.color-preview .league-team-heading { grid-template-columns: 1fr; gap: 1.5rem; }
   body.color-preview .impact-pillars { grid-template-columns: 1fr; gap: 0; margin-top: 2.5rem; }
   body.color-preview .impact-pillars > div { padding: 1rem 0; border-right: 0; border-bottom: 1px solid rgba(26, 42, 75, .28); }
   body.color-preview .impact-pillars h3 { margin: .4rem 0; }
