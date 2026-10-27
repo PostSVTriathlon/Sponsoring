@@ -399,6 +399,7 @@ body.color-preview .league-heading {
 
 body.color-preview .league-team-heading {
   align-items: start;
+  grid-template-columns: minmax(0, 1fr);
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(26, 42, 75, .5);
@@ -407,6 +408,12 @@ body.color-preview .league-team-heading {
 body.color-preview .league-heading > div,
 body.color-preview .league-team-copy {
   max-width: 38rem;
+}
+
+body.color-preview .league-opening-copy {
+  max-width: 46rem;
+  margin-bottom: clamp(1.25rem, 3vh, 2rem);
+  font-size: 1.05rem;
 }
 
 body.color-preview .league-heading h2,
@@ -426,6 +433,14 @@ body.color-preview .league-team-copy p + p {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(26, 42, 75, .28);
+}
+
+body.color-preview .league-sponsor-takeaway {
+  max-width: 46rem;
+  margin: 1.5rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(26, 42, 75, .5);
+  font-size: 1.05rem;
 }
 
 body.color-preview .impact-heading {
@@ -515,6 +530,10 @@ body.color-preview .partner-options p {
   paint-order: stroke fill;
 }
 
+body.color-preview #kapitel-04 .chapter-content p:not(.section-kicker):not(.apparel-placeholder-note):not(.apparel-progress) {
+  font-size: 1.05rem;
+}
+
 body.color-preview .partner-options {
   margin-top: 1.5rem;
   padding-top: .9rem;
@@ -571,8 +590,6 @@ body.color-preview .apparel-copy h2 {
 body.color-preview .apparel-copy > p:not(.eyebrow) {
   max-width: 35rem;
   color: #ffffff;
-  font-size: clamp(.95rem, 1.2vw, 1.12rem);
-  font-weight: 550;
   -webkit-text-stroke: .2px #1a2a4b;
   paint-order: stroke fill;
 }
@@ -863,7 +880,6 @@ body.color-preview .hero h1 em {
 
   body.color-preview .apparel-copy > p:not(.eyebrow) {
     max-width: 38rem;
-    font-size: .8rem;
   }
 
   body.color-preview .apparel-copy .apparel-placeholder-note {
