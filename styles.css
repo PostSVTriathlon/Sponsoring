@@ -562,7 +562,7 @@ body.color-preview .apparel-stage {
   width: min(1240px, 100%);
   height: 100svh;
   min-height: 620px;
-  grid-template-columns: minmax(0, 1.35fr) minmax(260px, .85fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
   gap: clamp(2rem, 7vw, 7rem);
   margin-inline: auto;
@@ -570,45 +570,11 @@ body.color-preview .apparel-stage {
   overflow: hidden;
 }
 
-body.color-preview .apparel-copy {
-  max-width: 46rem;
-  opacity: var(--apparel-copy-opacity, 1);
-  transform: translateY(var(--apparel-copy-y, 0px));
-}
-
-body.color-preview .apparel-copy .eyebrow {
-  color: #1a2a4b;
-}
-
-body.color-preview .apparel-copy h2 {
+body.color-preview .apparel-intro h2 {
   margin: .25rem 0 .7rem;
   color: #1a2a4b;
   font-size: clamp(2.35rem, 3.7vw, 4.2rem);
   line-height: .92;
-}
-
-body.color-preview .apparel-copy > p:not(.eyebrow) {
-  max-width: 35rem;
-  color: #ffffff;
-  -webkit-text-stroke: .2px #1a2a4b;
-  paint-order: stroke fill;
-}
-
-body.color-preview .apparel-copy .apparel-placeholder-note {
-  margin-top: 1.4rem;
-  color: #ffffff;
-  font-size: .78rem;
-}
-
-body.color-preview .apparel-copy .apparel-progress {
-  margin-top: 2.5rem;
-  color: #ffffff;
-  font-size: .72rem;
-  font-weight: 750;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  -webkit-text-stroke: .35px #1a2a4b;
-  paint-order: stroke fill;
 }
 
 body.color-preview .kit-visual {
@@ -701,14 +667,15 @@ body.color-preview .contact-main > p { max-width: 48rem; }
 body.color-preview .contact-card { border: 1px solid rgba(26, 42, 75, .72); border-top: 3px solid #e3017e; background: transparent; color: #ffffff; }
 body.color-preview .contact-cards { grid-template-columns: minmax(0, 1fr); max-width: 36rem; }
 body.color-preview .contact-card { padding: 1.2rem 0; border: 0; border-top: 1px solid rgba(26, 42, 75, .55); }
-body.color-preview .contact-role { color: #ffffff; -webkit-text-stroke: .2px #1a2a4b; paint-order: stroke fill; }
+body.color-preview .contact-role { color: #ffffff; font-size: .9rem; font-weight: 800; -webkit-text-stroke: .2px #1a2a4b; paint-order: stroke fill; }
 body.color-preview .contact-card h3 { margin: .4rem 0 .7rem; color: #ffffff; font-size: 1.35rem; line-height: 1.2; -webkit-text-stroke: .45px #1a2a4b; paint-order: stroke fill; }
 
 body.color-preview .contact-email {
   display: block;
-  margin: -.7rem 0 .8rem;
+  margin: -.45rem 0 1rem;
   color: #ffffff;
-  font-size: .82rem;
+  font-size: 1rem;
+  font-weight: 550;
   -webkit-text-stroke: .25px #1a2a4b;
   paint-order: stroke fill;
 }
@@ -732,6 +699,19 @@ body.color-preview .department-contact {
   border-top: 1px solid rgba(26, 42, 75, .45);
 }
 
+body.color-preview .contact-person {
+  display: grid;
+  gap: .35rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(26, 42, 75, .45);
+}
+
+body.color-preview .contact-online {
+  display: grid;
+  gap: .35rem;
+}
+
 body.color-preview .department-contact h3 {
   margin: .15rem 0 .2rem;
   color: #ffffff;
@@ -744,21 +724,25 @@ body.color-preview .department-contact h3 {
 body.color-preview .department-link {
   display: inline-flex;
   width: fit-content;
-  min-height: 32px;
+  min-height: 40px;
   align-items: center;
-  gap: .45rem;
+  gap: .6rem;
   color: #ffffff;
-  font-size: .9rem;
+  font-size: 1rem;
+  font-weight: 650;
   text-decoration: underline;
   text-underline-offset: .18em;
   -webkit-text-stroke: .2px #1a2a4b;
   paint-order: stroke fill;
 }
 
-body.color-preview .contact-social-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem 1.5rem; }
-body.color-preview .instagram-icon { width: 20px; height: 20px; flex: none; stroke: #ffffff; stroke-width: 1.7; }
+body.color-preview .contact-social-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem 1.5rem; }
+body.color-preview .contact-card .contact-link { min-height: 48px; gap: .75rem; font-size: 1.05rem; font-weight: 750; }
+body.color-preview .contact-website { grid-column: 1 / -1; min-height: 48px; }
+body.color-preview .instagram-icon { width: 28px; height: 28px; flex: none; stroke: #ffffff; stroke-width: 1.7; }
+body.color-preview .website-icon { width: 22px; height: 22px; flex: none; stroke: #ffffff; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+body.color-preview .email-icon { width: 22px; height: 22px; flex: none; stroke: #ffffff; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 body.color-preview .instagram-icon-dot { fill: #ffffff; stroke: none; }
-body.color-preview .social-arrow { margin-left: auto; font-size: 1rem; }
 
 body.color-preview .site-footer {
   display: grid;
@@ -860,39 +844,9 @@ body.color-preview .hero h1 em {
     overflow: hidden;
   }
 
-  body.color-preview .apparel-copy {
-    position: absolute;
-    z-index: 2;
-    top: clamp(2.6rem, 5.3vh, 3.7rem);
-    right: 1.25rem;
-    left: 1.25rem;
-    max-width: none;
-    opacity: var(--apparel-copy-opacity, 1);
-    transform: translateY(var(--apparel-copy-y, 0px));
-  }
-
-  body.color-preview .apparel-copy .eyebrow { font-size: .6rem; }
-
-  body.color-preview .apparel-copy h2 {
+  body.color-preview .apparel-intro h2 {
     margin: .25rem 0 .65rem;
     font-size: clamp(2.05rem, 8.5vw, 3rem);
-  }
-
-  body.color-preview .apparel-copy > p:not(.eyebrow) {
-    max-width: 38rem;
-  }
-
-  body.color-preview .apparel-copy .apparel-placeholder-note {
-    margin-top: .7rem;
-    font-size: .62rem;
-  }
-
-  body.color-preview .apparel-copy .apparel-progress {
-    margin-top: .8rem;
-    color: #ffffff;
-    font-size: .62rem;
-    -webkit-text-stroke: .2px #1a2a4b;
-    paint-order: stroke fill;
   }
 
   body.color-preview .kit-visual {
