@@ -249,12 +249,6 @@ body.color-preview .chapter {
 body.color-preview .chapter:last-of-type { border-bottom: 1px solid rgba(26, 42, 75, .35); }
 body.color-preview .chapter:first-of-type { border-top: 0; }
 
-body.color-preview #kapitel-04[open] + #kapitel-05 {
-  position: relative;
-  z-index: 3;
-  margin-top: -15svh;
-}
-
 body.color-preview .chapter-summary {
   display: grid;
   grid-template-columns: 2.5rem minmax(0, 1fr) 2.75rem;
@@ -421,6 +415,8 @@ body.color-preview .league-team-heading h2 {
   font-size: clamp(2.6rem, 4.4vw, 4.4rem);
 }
 
+body.color-preview #kapitel-03 .team-highlight { color: #e3017e; }
+
 body.color-preview .league-heading > div p,
 body.color-preview .league-team-copy p {
   font-size: 1.05rem;
@@ -431,8 +427,6 @@ body.color-preview .league-team-copy p:last-child { margin-bottom: 0; }
 
 body.color-preview .league-team-copy p + p {
   margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(26, 42, 75, .28);
 }
 
 body.color-preview .league-sponsor-takeaway {
@@ -757,7 +751,7 @@ body.color-preview .site-footer .back-top { color: #1a2a4b; }
 
 body.color-preview .hero-copy {
   justify-content: flex-start;
-  padding: clamp(8rem, 15vh, 12rem) clamp(1.5rem, 8vw, 8.5rem) 0;
+  padding: clamp(3rem, 5vh, 4rem) clamp(1.5rem, 8vw, 8.5rem) 0;
 }
 
 body.color-preview .eyebrow {
@@ -786,13 +780,81 @@ body.color-preview .hero h1 em {
   paint-order: stroke fill;
 }
 
+@media (min-width: 761px) {
+  body.color-preview h1 { font-size: clamp(3rem, 5vw, 5.5rem); }
+
+  body.color-preview .section-wrap,
+  body.color-preview .chapter-summary {
+    width: min(66.6667vw, 1200px);
+    margin-inline: auto;
+  }
+
+  body.color-preview .chapter-summary { padding-inline: 0; }
+
+  body.color-preview .hero-copy {
+    width: min(66.6667vw, 1200px);
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+
+  body.color-preview .hero-intro,
+  body.color-preview .intro-body p,
+  body.color-preview .teams-heading p,
+  body.color-preview .league-heading > div,
+  body.color-preview .league-team-copy,
+  body.color-preview .league-opening-copy,
+  body.color-preview .league-sponsor-takeaway,
+  body.color-preview .impact-heading > p,
+  body.color-preview .partner-guideline p,
+  body.color-preview .partner-options p,
+  body.color-preview .contact-main,
+  body.color-preview .contact-main > p,
+  body.color-preview .contact-cards {
+    max-width: none;
+  }
+
+  body.color-preview .contact-cards { width: 100%; }
+
+  body.color-preview .intro-content,
+  body.color-preview .teams-heading,
+  body.color-preview .impact-heading,
+  body.color-preview .league-heading,
+  body.color-preview .league-team-heading,
+  body.color-preview .sponsoring-layout,
+  body.color-preview .partner-offer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  body.color-preview .partner-offer-grid { align-items: start; }
+
+  body.color-preview .apparel-stage {
+    width: min(66.6667vw, 1200px);
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+    padding-inline: 0;
+  }
+
+  body.color-preview .contact-social-links {
+    grid-template-columns: minmax(0, 1fr);
+    gap: .4rem;
+  }
+
+  body.color-preview .contact-website { grid-column: auto; }
+
+  body.color-preview .impact-pillars {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}
+
 @media (max-width: 600px) {
   body.color-preview #kapitel-04[open] + #kapitel-05 {
     margin-top: 0;
   }
 
   body.color-preview .hero-copy {
-    padding-top: 4rem;
+    padding-top: 1.5rem;
   }
 
   body.color-preview .club-logo {
