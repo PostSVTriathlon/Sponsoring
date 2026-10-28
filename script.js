@@ -55,14 +55,8 @@ if (apparelSection && partnerMarks.length) {
         : progress < holdEnd
           ? 0
           : 0;
-    const copyOpacity = prefersReducedMotion || !isMobile
-      ? 1
-      : Math.max(0, 1 - progress / 0.24);
-
     apparelSection.style.setProperty("--suit-scale", suitScale.toFixed(3));
     apparelSection.style.setProperty("--suit-y", `${verticalShift.toFixed(2)}vh`);
-    apparelSection.style.setProperty("--apparel-copy-opacity", copyOpacity.toFixed(3));
-    apparelSection.style.setProperty("--apparel-copy-y", `${(-10 * (1 - copyOpacity)).toFixed(2)}px`);
     let visibleCount = 0;
 
     partnerMarks.forEach((mark) => {
