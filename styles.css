@@ -597,17 +597,18 @@ body.color-preview .kit-image {
 body.color-preview .partner-mark {
   position: absolute;
   display: grid;
-  min-height: 28px;
+  aspect-ratio: 1;
   place-items: center;
-  padding: .3rem .42rem;
+  padding: .2rem;
   border: 1px dashed #1a2a4b;
-  background: rgba(255, 255, 255, .92);
-  color: #e3017e;
-  font-size: clamp(.48rem, .7vw, .68rem);
+  background: transparent;
+  color: #fff;
+  font-size: clamp(.7rem, .9vw, .9rem);
   font-weight: 800;
-  letter-spacing: .035em;
+  letter-spacing: 0;
   line-height: 1.1;
   text-align: center;
+  -webkit-text-stroke: .25px #1a2a4b;
   opacity: 0;
   transform: translateY(6px);
   transition: opacity 240ms ease, transform 240ms ease;
@@ -619,21 +620,21 @@ body.color-preview .partner-mark.is-visible {
 }
 
 body.color-preview .partner-mark--chest {
-  top: 25%;
-  left: 53%;
-  width: 37%;
+  top: 27%;
+  left: 24%;
+  width: 18%;
 }
 
 body.color-preview .partner-mark--torso {
-  top: 44%;
-  left: 17%;
-  width: 34%;
+  top: 27%;
+  left: 58%;
+  width: 18%;
 }
 
 body.color-preview .partner-mark--leg {
-  top: 68%;
-  left: 25%;
-  width: 34%;
+  top: 40%;
+  left: 41%;
+  width: 18%;
 }
 
 body.color-preview .city-silhouette {
@@ -929,8 +930,7 @@ body.color-preview .hero h1 em {
   }
 
   body.color-preview .partner-mark {
-    min-height: 24px;
-    padding: .2rem .28rem;
-    font-size: .44rem;
+    padding: .15rem;
+    font-size: .78rem;
   }
 }
